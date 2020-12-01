@@ -171,10 +171,11 @@ body{
             <div class="info">
             <table class="x" style="border:0;width:100%;padding:0px"><tr ><td width="50%">
             <div class="main_info">
-                <h2>Muskan Aggarwal</h2>
-                <h4> </h4>
-                <h4>Contact no:-8847487565</h4>
-                <h4>Email:-maggarwal3_be18@thapar.edu</h4>
+                <h2 id="name">Muskan Aggarwal</h2>
+                <h4 id="linkedin">  </h4>
+                <h4>Contact no:- <span id="phone"> 8847487565</span></h4>
+                <h4>Email:- <span id="email">maggarwal3_be18@thapar.edu</span></h4>
+                <h4>City:- <span id="city">maggarwal3_be18@thapar.edu</span></h4>
                                    
                     </div></td><td width="20%">
                     
@@ -267,7 +268,22 @@ body{
     <div class="container">
     <center><button onclick="CallPrint()" class="btn btn-primary my-2 " >Print</button></center>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+
+window.onload = ()=>{
+name= localStorage.getItem("Name");
+email= localStorage.getItem("Email");
+linkedin= localStorage.getItem("Linkedin");
+phone= localStorage.getItem("Phone");
+city= localStorage.getItem("City");
+
+$("#name").html(name);
+$("#email").html(email);
+$("#phone").html(phone);
+$("#linkedin").html(linkedin);
+$("#city").html(city);
+}
   function CallPrint() {
          window.print();
         }
