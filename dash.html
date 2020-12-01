@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://resume.abes.ac.in/assets/css/style1.css">
     <link type="text/css" rel="stylesheet" href="https://resume.abes.ac.in/assets/css/personal.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
    <script src="main.js"></script>
@@ -102,38 +102,33 @@ a,a:hover{
         <div class="col-md-7 bg-light" style="margin-top:50px" >
 				<h3 class="clr">Personal Information</h3>
 		<p style="color: green">* Enter Correct User-Id and Personal Information</p>
-		<form action="dash.html" name="personal" method="POST">
+		<form  name="personal">
 		<input type="hidden" id="status" name="status" value="1">
 		<!--  -->
 			<div class="row">
 				<div class="col-md-4">
-			   		<label for="validationDefault01">Name *</label>
-                    <input type="text" class="form-control" id="validationDefault01" placeholder="Name" value="" required name="name">
+			   		<label for="name">Name *</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" value="" required name="name">
 				</div>
-					
-				<div class="col-md-4">
-					<label for="validationDefault01">Password *</label>
-					<span id="user_id2" style="color:green;"><br><b></b></span>
-				 	<input type="text" class="form-control" placeholder="Password" value=""id="user_id" required name="user_id" >
-			 	</div>
+				
 
                 <div class="col-md-4">
-					<label for="validationDefault03"><span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span> Phone Number *</label>
-                    <input type="text" class="form-control" id="validationDefault03" onblur="checkTextField(this);" placeholder="Contact number" value="" required name="mobile_no" >
+					<label for="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span> Phone Number *</label>
+                    <input type="text" class="form-control" id="phone" onblur="checkTextField(this);" placeholder="Contact number" value="" required name="mobile_no" >
                 <p id="error_msg"></p>
 			   	</div>
 			</div>
 				   
 			<div class="row">		   
       			<div class="col-md-7">
-				   	<label for="validationDefault03"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> E-mail *</label>
-                        <input type="email" class="form-control" id="validationDefault03" placeholder="email" value="" required name="email_id" >
+				   	<label for="email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> E-mail *</label>
+                        <input type="email" class="form-control" id="email" placeholder="email" value="" required name="email_id" >
                         
 				</div>
 
 				<div class="col-md-5">
-					<label for="validationDefault04"> LinkedIn</label>
-                    <input type="text" class="form-control" id="validationDefault04" placeholder="LinkedIn ID" value="" name="linkedin" >
+					<label for="linkedin"> LinkedIn</label>
+                    <input type="text" class="form-control" id="linkedin" placeholder="LinkedIn ID" value="" name="linkedin" >
 				</div>
 			</div>
 				      
@@ -168,11 +163,11 @@ a,a:hover{
 			
 			<div class="buttons col-md-12">    
 				  
-				<button type="submit" class="btn btn-success" style="float:right" onclick="validate()">CONFIRM & SAVE </button>   
+				<button type="button" class="btn btn-success" id="personalbtn" style="float:right">CONFIRM & SAVE </button>   
 			</div>
 		</form>
 		 
-		<a href="career.html" ><button type="button" class="btn btn-success">NEXT SECTION&rarr;</button></a>
+		<button type="button" class="btn btn-success">NEXT SECTION&rarr;</button>
 			
         </div>
 
@@ -226,4 +221,20 @@ a,a:hover{
 	
 </footer>
 </body>
+<script>
+
+$("#personalbtn").on("click",()=>{
+    localStorage.setItem("Name","");
+    localStorage.setItem("Name",$("#name").val());
+    localStorage.setItem("Phone","");
+    localStorage.setItem("Phone",$("#phone").val());
+    localStorage.setItem("Linkedin","");
+    localStorage.setItem("Linkedin",$("#linkedin").val());
+    localStorage.setItem("Email","");
+    localStorage.setItem("Email",$("#email").val());
+    localStorage.setItem("City",$("#inputCity").val());
+    location.href =  "/career.html";
+})
+
+</script>
 </html>
