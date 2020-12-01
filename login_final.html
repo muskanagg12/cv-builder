@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login|CV BUILDER</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
+    <link type="text/css" rel="stylesheet" href="https://resume.abes.ac.in/assets/css/style.css">
+	<style>
+    body{
+    //padding: 25px;
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    }
+.vl {
+  border-left: 3px solid #192B4D;
+  height: 450px;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-3 text-center" > 
+         
+	</div>
+    <div class="col-md-9 col-sm-9 text-center" style="background-color:#5BC0BE;height:70px;padding-top:10px;color:white">
+         <h1 style="font-family:Times New Roman;"> CV BUILDER
+   
+         </h1>
+	</div>
+    
+ </div>
+  <!-- <header class="col-md-12 row head fixed-top">
+    <div class="col-md-12">
+        <h2 style="font-family:Times New Roman">RESUME BUILDER</h2>
+    </div>
+</header> -->
+
+     <div class="constainer-fluid">
+	    <div class="row" style="margin-top:80px">
+			<div  class="col-md-6 vector float-md-right" id="rm">
+			 <img src="https://resume.abes.ac.in/assets/images/vector.svg"  alt="">
+			</div>
+			<div class="col-md-1 vl" id="rm"></div>
+      
+		    <div class="col-md-5 form-holder" id="loginform" style="margin-top:10px;">
+        
+
+			  <div class="imageicon"><img  src="images/logo_final.jpg" id="output">
+                    </div>
+					
+					 <form action="Login_final.html" class="needs-validation"  method="post"  novalidate>
+                            <div class="form-group">
+                            
+                                <input type="text" class="form-control" id="uname" placeholder="Enter UserName" name="user_id" required>
+                                <div class="valid-feedback">Valid.</div>
+                              <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control form-control2" id="pswd" placeholder="Enter Password" name="pswd" required>
+                                <div class="valid-feedback">Valid.</div>
+                              <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="link text-primary">
+                              <h6><a href="dash.html">New User</a></h6>
+                              
+                            </div>
+                            <button action="G:/web%20dev/Cv_builder/dash.html"type="submit" class="btn ">LOGIN</button>
+                          </form>
+			</div>
+		</div>
+		
+		<div class="row">
+		<footer class="col-md-12 foot fixed-bottom">
+       <span >  ©2020 Copyright  <a href="#" target="_blank"  onMouseOver="this.style.color='#FFA11B'"
+   onMouseOut="this.style.color='#FFF'" style="background-color:#5BC0BE;color:white;padding-top:5px;"> </a></span>
+  </footer>
+		</div>	 
+	 </div>
+	 <script>
+                            // Disable form submissions if there are invalid fields
+                            (function() {
+                              'use strict';
+                              window.addEventListener('load', function() {
+                                // Get the forms we want to add validation styles to
+                                var forms = document.getElementsByClassName('needs-validation');
+                                // Loop over them and prevent submission
+                                var validation = Array.prototype.filter.call(forms, function(form) {
+                                  form.addEventListener('submit', function(event) {
+                                    if (form.checkValidity() === false) {
+                                      event.preventDefault();
+                                      event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                  }, false);
+                                });
+                              }, false);
+                            })();
+                            </script>
+
+
+
+
+   
+</body>
+</html>

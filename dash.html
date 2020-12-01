@@ -1,0 +1,229 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dashboard</title>
+
+    <script src="https://kit.fontawesome.com/90f0a938cd.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <link type="text/css" rel="stylesheet" href="https://resume.abes.ac.in/assets/css/style1.css">
+    <link type="text/css" rel="stylesheet" href="https://resume.abes.ac.in/assets/css/personal.css">
+
+   
+   <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+   <script src="main.js"></script>
+
+</head>
+
+ <style>
+ 	#error_msg{
+		color:red;
+	}
+ </style>
+<body>
+<div class="row">
+    <div class="col-md-3 text-center" > 
+         <img src="images/cv_corner.jpg" style="padding-top:10px" height="85px" >
+	</div>
+    <div class="col-md-9 col-sm-9 text-center" style="background-color:#5BC0BE;height:90px;padding-top:15px;color:white">
+         <h1 style="font-family:Times New Roman;"> CV Builder</h1>
+	</div>
+    
+ </div>
+
+ 
+<div class="container-fluid">
+    <div class="row">
+        <style>
+   
+
+a,a:hover{
+    decoration:none;
+    color:black
+}
+.active{
+    color: red;
+}
+</style>
+
+
+        <div class="col-md-3 h-100" style="margin-top:20px">
+            <section class="list" style="background-color:white">
+                <ul class="nav-list">
+                    <a href="dash.html">
+                        <li class = "list-group-item list-group-item-danger" height="10px"> 
+                            Personal Information
+                        </li>
+                    </a>
+                    <a href="career.html" >
+                         <li class = "list-group-item list-group-item-danger">
+                            Career Objective
+                         </li>
+                    </a>
+                    <a href="academic.html">
+                        <li class = "list-group-item list-group-item-danger">
+                            Academic Credentials
+                        </li>
+                    </a>
+                    <a href="qualification.html">
+                        <li class = "list-group-item list-group-item-danger">
+                            Other Qualifications 
+                        </li>
+                    </a>
+                    <a href="certification.html">
+                        <li class = "list-group-item list-group-item-danger">
+                            Training & Certification
+                        </li>
+                    </a>
+                    <a href="achieve.html">
+                        <li class = "list-group-item list-group-item-danger">
+                            Skills & Achievements 
+                        </li>
+                    </a>
+                    <a href="activities.html">
+                        <li class = "list-group-item list-group-item-danger">
+                            Curricular Activities 
+                        </li>
+                    </a>
+                    <a href="reference.html">
+                        <li class = "list-group-item list-group-item-danger">
+                            References 
+                        </li>
+                    </a>
+                </ul>
+                </section>	
+        </div>
+
+
+        <div class="col-md-7 bg-light" style="margin-top:50px" >
+				<h3 class="clr">Personal Information</h3>
+		<p style="color: green">* Enter Correct User-Id and Personal Information</p>
+		<form action="dash.html" name="personal" method="POST">
+		<input type="hidden" id="status" name="status" value="1">
+		<!--  -->
+			<div class="row">
+				<div class="col-md-4">
+			   		<label for="validationDefault01">Name *</label>
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="Name" value="" required name="name">
+				</div>
+					
+				<div class="col-md-4">
+					<label for="validationDefault01">Password *</label>
+					<span id="user_id2" style="color:green;"><br><b></b></span>
+				 	<input type="text" class="form-control" placeholder="Password" value=""id="user_id" required name="user_id" >
+			 	</div>
+
+                <div class="col-md-4">
+					<label for="validationDefault03"><span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span> Phone Number *</label>
+                    <input type="text" class="form-control" id="validationDefault03" onblur="checkTextField(this);" placeholder="Contact number" value="" required name="mobile_no" >
+                <p id="error_msg"></p>
+			   	</div>
+			</div>
+				   
+			<div class="row">		   
+      			<div class="col-md-7">
+				   	<label for="validationDefault03"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> E-mail *</label>
+                        <input type="email" class="form-control" id="validationDefault03" placeholder="email" value="" required name="email_id" >
+                        
+				</div>
+
+				<div class="col-md-5">
+					<label for="validationDefault04"> LinkedIn</label>
+                    <input type="text" class="form-control" id="validationDefault04" placeholder="LinkedIn ID" value="" name="linkedin" >
+				</div>
+			</div>
+				      
+			<div class="row">
+			   	<div class="col-md-6">
+			   		<label for="inputAddress">Permanent Address</label>
+                	<input type="text" class="form-control" id="inputAddress" placeholder="Line-1" value="" name="address_1" required>
+				</div>
+				
+				<div class="col-md-6">
+					<label for="inputAddress2">Current Address </label>
+                	<input type="text" class="form-control" id="inputAddress2" placeholder="Line-2" value=""  name="address_2">
+				</div>					
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity" value="" name="city" required>
+				</div>
+
+				<div class="col-md-4">
+					<label for="inputState">State</label>
+                    <input type="text" class="form-control" id="inputState" value="" name="state" required>
+				</div>
+
+				<div class="col-md-4">
+					<label for="inputZip">PinCode</label>
+                  	<input type="text" class="form-control" id="inputZip" value="" name="zip" required> 
+				</div>
+			</div>
+			
+			<div class="buttons col-md-12">    
+				  
+				<button type="submit" class="btn btn-success" style="float:right" onclick="validate()">CONFIRM & SAVE </button>   
+			</div>
+		</form>
+		 
+		<a href="career.html" ><button type="button" class="btn btn-success">NEXT SECTION&rarr;</button></a>
+			
+        </div>
+
+		<script>
+		var user_id = document.forms["personal"]["user_id"].value;
+
+			if (user_id == "")
+			{
+				
+				document.getElementById("user_id2").style.visibility = "hidden";
+				document.getElementById("user_id").style.visibility = "visible";
+			}
+			else 
+			{
+				
+				document.getElementById("user_id2").style.visibility = "visible";
+				document.getElementById("user_id").style.visibility = "hidden";
+
+			}
+			function checkTextField(field) {
+  			document.getElementById("error_msg").innerText =
+    		(field.value.length!=10) ? "Invalid Phone no" : "";
+		}
+		</script>
+        <div class="col-md-2 h-100">
+             <section class="list" style="background-color:white">
+                 <img src="https://resume.abes.ac.in/assets/images/resume.svg" height="200px" width="220px" id="rm">
+                  <img src="https://resume.abes.ac.in/assets/images/undraw_profile_6l1l.svg" height="350px" width="220px" id="rm">
+             </section>
+        </div>
+<style>
+	@media only screen and (max-width: 768px)
+ {
+    #rm{
+        display: none;
+    }
+  }
+</style>
+ 
+</div>
+</div>
+</div>
+<footer>
+<div style="background-color:black;height:28px;margin-top:15px">
+        <div class="col-md-12 text-center" style="color:white;">
+        
+      <span >  © 2020 Copyright <a href="team" target="_blank"  onMouseOver="this.style.color='#FFA11B'"
+   onMouseOut="this.style.color='#FFF'" style="color:white;padding-top:5px;"> </u></a></span>
+    </div>
+	</div>
+	
+</footer>
+</body>
+</html>
