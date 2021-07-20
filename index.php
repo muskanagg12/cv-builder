@@ -67,7 +67,7 @@ ul
          </div>
         
    	<center>
-        <h1 class="center"><b>Cv Builder</b></h1>
+        <h1 class="center"><b>muskan</b></h1>
         <br>
         <br>
         <br>
